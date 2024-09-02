@@ -1,5 +1,5 @@
 # gas-template
-yarn v4 + clasp + typescriptのGAS開発環境テンプレート
+pnpm + clasp + typescriptのGAS開発環境テンプレート
 ## Getting Started
 
 ### Clone Repository
@@ -13,8 +13,8 @@ yarn v4 + clasp + typescriptのGAS開発環境テンプレート
 ### 初期設定
 
 ```
-yarn
-yarn clasp login
+pnpm install
+pnpm clasp login
 ```
 
 
@@ -23,7 +23,7 @@ yarn clasp login
 1. 以下のコマンドを実行（ `{projectName}` は別の値に置き換える）
 
 ```
-yarn clasp create --title={projectName}
+pnpm clasp create --title={projectName}
 mv build/.clasp.json .clasp.prod.json
 ```
 
@@ -45,9 +45,4 @@ mv build/.clasp.json .clasp.prod.json
     ```
 1. build/appsscript.jsonをプロジェクトにあわせて修正する
 
-### 参考URL
 
-- [Yarnのバージョンによってnode_modulesが作成されない件について（voltaを使用）](https://qiita.com/ttf1998seiya/items/667e53b98e2f091f0143)
-- [プロジェクトを壊さず安全に npm から yarn4 へ移行する](https://zenn.dev/wakamsha/articles/migrate-from-npm-to-yarn)
-- [GAS + Typescript のいい感じのビルド環境を整える](https://zenn.dev/terass_dev/articles/a39ab8d0128eb1)
-- [TypeScript+clasp+esbuildでGASのローカル開発をもっと便利に](https://zenn.dev/funteractiveinc/articles/776b5812833475)
