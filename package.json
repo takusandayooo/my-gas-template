@@ -4,13 +4,14 @@
   "description": "",
   "main": "build/backend.js",
   "private": true,
+  "type": "module",
   "scripts": {
     "open:prod": "clasp_config_project=.clasp.prod.json clasp open",
     "open:dev": "clasp_config_project=.clasp.dev.json clasp open",
     "lint": "eslint --fix src/**/*.ts",
     "format": "prettier --write src/**/*.ts",
     "typecheck": "tsc --noEmit",
-    "build": "node build.js",
+    "build": "rollup -c",
     "prepare": "husky",
     "prepush": "mkdir -p build && cp appsscript.json build/appsscript.json && husky",
     "buildpush:prod": "pnpm build && pnpm prepush && cross-env clasp_config_project=.clasp.prod.json clasp push --force",
@@ -21,7 +22,16 @@
     "lint-staged": "^15.2.10"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-runtime": "^7.25.4",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-typescript": "^7.24.7",
+    "@babel/runtime": "^7.25.6",
     "@google/clasp": "^2.4.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/google-apps-script": "^1.0.83",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
@@ -31,6 +41,8 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.30.0",
     "prettier": "3.3.3",
+    "rollup": "^4.21.2",
+    "rollup-plugin-google-apps-script": "^1.1.13",
     "typescript": "^5.5.4"
   },
   "lint-staged": {
