@@ -1,18 +1,25 @@
+
 {
-  "include": [
-    "src"
-  ],
   "compilerOptions": {
-    "outDir": "build",
-    "target": "ES2019",
-    "lib": [
-      "esNext",
-      "DOM"
-    ],
-    "strict": true,
-    "importHelpers": true,
+    /* Base Options: */
     "esModuleInterop": true,
-    "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true,
-  }
+    "skipLibCheck": true,
+    "target": "es2019",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    /* Transpiling with other tools */
+    "module": "preserve",
+    "noEmit": true,
+    /* lib */
+    "lib": [
+      "es2022"
+    ]
+  },
 }
