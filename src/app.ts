@@ -1,4 +1,4 @@
 
 export function main() {
-  console.log("Hellow World");
+  Logger.log("Hellow World");
 }
