@@ -8,8 +8,8 @@
   "scripts": {
     "open:prod": "clasp_config_project=.clasp.prod.json clasp open",
     "open:dev": "clasp_config_project=.clasp.dev.json clasp open",
-    "lint": "eslint --fix src/**/*.ts",
-    "format": "prettier --write src/**/*.ts",
+    "lint": "biome check",
+    "lint-fix": "biome check --write",
     "typecheck": "tsc --noEmit",
     "build": "rollup -c",
     "prepare": "husky",
@@ -18,6 +18,7 @@
     "buildpush:dev": "pnpm build && pnpm prepush && cross-env clasp_config_project=.clasp.dev.json clasp push --force"
   },
   "dependencies": {
+    "@biomejs/biome": "^1.9.2",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10"
   },
@@ -33,23 +34,15 @@
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/google-apps-script": "^1.0.83",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
     "esbuild": "^0.23.1",
     "esbuild-gas-plugin": "^0.8.0",
-    "eslint": "^8.57.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.30.0",
     "prettier": "3.3.3",
     "rollup": "^4.22.5",
     "rollup-plugin-google-apps-script": "^1.1.14",
     "typescript": "^5.6.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "*.{js,ts}": ["biome check --write"]
   },
   "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
 }

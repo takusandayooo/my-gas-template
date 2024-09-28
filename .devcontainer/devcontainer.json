@@ -2,21 +2,32 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
 	"name": "Node.js & TypeScript",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm"
-
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:22-bullseye",
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
+	"features": {
+	  "github-cli": "latest",
+	  "ghcr.io/meaningful-ooo/devcontainer-features/fish": "latest"
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
-
+	// "postCreateCommand": "pnpm install",
 	// Configure tool-specific properties.
-	// "customizations": {},
-
+	"customizations": {
+	  // Configure properties specific to VS Code.
+	  "vscode": {
+		// Add the IDs of extensions you want installed when the container is created.
+		"extensions": [
+		  "dbaeumer.vscode-eslint",
+		  "esbenp.prettier-vscode",
+		  "eamodio.gitlens",
+		  "mhutchie.git-graph",
+		  "GitHub.vscode-pull-request-github",
+		  "oderwat.indent-rainbow",
+		  "biomejs.biome"
+		]
+	  }
+	}
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-}
+  }
