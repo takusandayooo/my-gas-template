@@ -18,7 +18,7 @@
     "buildpush:dev": "pnpm build && pnpm prepush && cross-env clasp_config_project=.clasp.dev.json clasp push --force"
   },
   "dependencies": {
-    "husky": "^9.1.5",
+    "husky": "^9.1.6",
     "lint-staged": "^15.2.10"
   },
   "devDependencies": {
@@ -29,21 +29,21 @@
     "@babel/runtime": "^7.25.6",
     "@google/clasp": "^2.4.2",
     "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-commonjs": "^26.0.3",
+    "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/google-apps-script": "^1.0.83",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "esbuild": "^0.23.1",
     "esbuild-gas-plugin": "^0.8.0",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.30.0",
     "prettier": "3.3.3",
-    "rollup": "^4.21.2",
-    "rollup-plugin-google-apps-script": "^1.1.13",
-    "typescript": "^5.5.4"
+    "rollup": "^4.22.5",
+    "rollup-plugin-google-apps-script": "^1.1.14",
+    "typescript": "^5.6.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
