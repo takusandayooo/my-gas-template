@@ -10,7 +10,7 @@
     "open:dev": "clasp_config_project=.clasp.dev.json clasp open",
     "lint": "biome check",
     "lint-fix": "biome check --write",
-    "typecheck": "tsc --noEmit",
+    "type-check": "tsc --noEmit",
     "build": "rollup -c",
     "prepare": "husky",
     "prepush": "mkdir -p build && cp appsscript.json build/appsscript.json && husky",
