@@ -2,7 +2,7 @@
   "name": "gas-template",
   "version": "1.0.0",
   "description": "",
-  "main": "build/backend.js",
+  "main": "build/index.js",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,38 +11,26 @@
     "lint": "biome check",
     "lint-fix": "biome check --write",
     "type-check": "tsc --noEmit",
-    "build": "rollup -c",
+    "build": "bun build.js",
     "prepare": "husky",
-    "prepush": "mkdir -p build && cp appsscript.json build/appsscript.json && husky",
-    "buildpush:prod": "pnpm build && pnpm prepush && cross-env clasp_config_project=.clasp.prod.json clasp push --force",
-    "buildpush:dev": "pnpm build && pnpm prepush && cross-env clasp_config_project=.clasp.dev.json clasp push --force"
+    "prepush": "mkdir -p build && cp appsscript.json build/appsscript.json",
+    "buildpush:prod": "bun run build && bun run prepush && clasp_config_project=.clasp.prod.json clasp push --force",
+    "buildpush:dev": "bun run build && bun run prepush && clasp_config_project=.clasp.dev.json clasp push --force"
   },
   "dependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.4.10",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3"
+    "lint-staged": "^15.5.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.9",
-    "@babel/plugin-transform-runtime": "^7.26.9",
-    "@babel/preset-env": "^7.26.9",
-    "@babel/preset-typescript": "^7.26.0",
-    "@babel/runtime": "^7.26.9",
     "@google/clasp": "^2.5.0",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^28.0.2",
-    "@rollup/plugin-node-resolve": "^16.0.0",
-    "@rollup/plugin-typescript": "^12.1.2",
-    "@types/google-apps-script": "^1.0.97",
-    "esbuild": "^0.25.0",
+    "@types/google-apps-script": "^1.0.100",
+    "esbuild": "^0.25.12",
     "esbuild-gas-plugin": "^0.8.0",
-    "prettier": "3.5.2",
-    "rollup": "^4.34.8",
-    "rollup-plugin-google-apps-script": "^2.0.2",
-    "typescript": "^5.8.2"
+    "typescript": "^5.9.3"
   },
   "lint-staged": {
     "*.{js,ts}": ["biome check --write"]
   },
-  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
+  "packageManager": "bun@1.3.11"
 }

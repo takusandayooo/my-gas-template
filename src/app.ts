@@ -1,3 +1,3 @@
 export function main() {
-  Logger.log("Hellow World");
+  console.log("Hellow World");
 }

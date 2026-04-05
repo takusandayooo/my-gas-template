@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
   "name": "Node.js & TypeScript",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bullseye",
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     "github-cli": "latest",
@@ -18,8 +18,6 @@
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
         "eamodio.gitlens",
         "mhutchie.git-graph",
         "GitHub.vscode-pull-request-github",
